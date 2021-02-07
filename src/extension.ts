@@ -5,6 +5,7 @@ import {existsSync} from 'fs';
 import {isAbsolute, join} from 'path';
 import {FavaManager} from './favaManager';
 import {ActionProvider} from './actionProvider';
+import {SymbolProvider} from './symbolProvider';
 import {Completer} from './completer';
 import {Formatter} from './formatter';
 import {runCmd} from './utils';
@@ -52,6 +53,14 @@ export function activate(context: vscode.ExtensionContext) {
             extension.formatter.instantFormat(e),
       ),
   );
+
+  context.subscriptions.push(
+    vscode.languages.registerDocumentSymbolProvider(
+      { scheme: 'file', language: 'beancount' },
+      extension.symbolProvider
+    )
+  );
+
   context.subscriptions.push(
       vscode.workspace.onDidSaveTextDocument((e: vscode.TextDocument) =>
         extension.refreshData(context),
@@ -86,6 +95,7 @@ export function deactivate() { }
 export class Extension {
   completer: Completer;
   actionProvider: ActionProvider;
+  symbolProvider: SymbolProvider;
   favaManager: FavaManager;
   diagnosticCollection: vscode.DiagnosticCollection;
   formatter: Formatter;
@@ -97,6 +107,7 @@ export class Extension {
     this.context = context;
     this.completer = new Completer(this);
     this.actionProvider = new ActionProvider();
+    this.symbolProvider = new SymbolProvider();
     this.favaManager = new FavaManager(this);
     this.diagnosticCollection = vscode.languages.createDiagnosticCollection(
         'Beancount',

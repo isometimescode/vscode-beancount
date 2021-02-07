@@ -38,9 +38,9 @@ window as the main file.
 ## Recommended practices
 
 0. **Make sure you installed Python3 and [beancount](https://pypi.org/project/beancount/). Set `beancount.python3Path` to the correct path.**
-1. Split your ledger into several `.bean` files according to time and 
-put all your `open`/`close` in a main file. 
-2. Include all other files in the 
+1. Split your ledger into several `.bean` files according to time and
+put all your `open`/`close` in a main file.
+2. Include all other files in the
 main file by the `include` command in the main bean file.
 3. Open `BeanFolder` with VSCode and set `beancount.mainBeanFile` to the full path of `main.bean` in the current [Workspace Settings](https://code.visualstudio.com/docs/getstarted/settings).
 
@@ -59,7 +59,7 @@ If you open `.vscode/settings.json`, you should see something like this:
 {
     "beancount.mainBeanFile": "main.bean"
 }
-``` 
+```
 
 Now once `BeanFolder` is opened as a workspace in VSCode, this extension will be able to invoke beancount to check errors and calculate balances.
 
@@ -73,8 +73,12 @@ see GitHub [issue page](https://github.com/Lencerf/vscode-beancount/issues)
 * Add/remove diagnostic information when standalone files are opened/closed
 * Let formatter ignore non-beancount files
 
+### 0.5.7
+* fix npm audit warnings by bumping packages
+* (@isometimescode) Add outline for ;#region statements, related to (https://github.com/Lencerf/vscode-beancount/issues/25)
+
 ### 0.5.6
 * fix [#40](https://github.com/Lencerf/vscode-beancount/issues/40)
 
-### 0.5.5 
+### 0.5.5
 * fix [#38](https://github.com/Lencerf/vscode-beancount/issues/38): account autocompletion fails due to commodity price error

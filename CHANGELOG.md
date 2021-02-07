@@ -4,6 +4,10 @@
 * Add/remove diagnostic information when standalone files are opened/closed
 * Let formatter ignore non-beancount files
 
+### 0.5.7 (2021-02-06)
+* fix npm audit warnings by bumping packages
+* (@isometimescode) Add outline for ;#region statements, related to (https://github.com/Lencerf/vscode-beancount/issues/25)
+
 ### 0.5.6 (2020-03-18)
 * fix [#40](https://github.com/Lencerf/vscode-beancount/issues/40)
 
@@ -88,7 +92,7 @@
 ### 0.2.0 (2018-04-26)
 
 - Code snippets ([@vlamacko](https://github.com/Lencerf/vscode-beancount/pull/7))
-- Run Fava to view balances 
+- Run Fava to view balances
 
 ### 0.1.1 (2018-04-22)
 - The extension now will not check unrelated files. [#8](https://github.com/Lencerf/vscode-beancount/issues/8)
