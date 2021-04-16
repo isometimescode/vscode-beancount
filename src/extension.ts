@@ -55,10 +55,10 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(
-    vscode.languages.registerDocumentSymbolProvider(
-      { scheme: 'file', language: 'beancount' },
-      extension.symbolProvider
-    )
+      vscode.languages.registerDocumentSymbolProvider(
+          {scheme: 'file', language: 'beancount'},
+          extension.symbolProvider,
+      ),
   );
 
   context.subscriptions.push(

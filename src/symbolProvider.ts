@@ -19,8 +19,8 @@ export class SymbolProvider implements vscode.DocumentSymbolProvider {
   }
 
   provideDocumentSymbols(
-    document: vscode.TextDocument,
-    token: vscode.CancellationToken
+      document: vscode.TextDocument,
+      token: vscode.CancellationToken,
   ): Promise<vscode.DocumentSymbol[]> {
     return new Promise((resolve, reject) => {
       const symbols: vscode.DocumentSymbol[] = [];
@@ -30,11 +30,11 @@ export class SymbolProvider implements vscode.DocumentSymbolProvider {
         // line can start or end with ;#region
         if (line.text.includes(';#region')) {
           const symbol = new vscode.DocumentSymbol(
-            this.format(line.text.split(' ')),
-            'Region',
-            vscode.SymbolKind.String,
-            line.range,
-            line.range
+              this.format(line.text.split(' ')),
+              'Region',
+              vscode.SymbolKind.String,
+              line.range,
+              line.range,
           );
           symbols.push(symbol);
         }
