@@ -2,7 +2,7 @@
   "name": "beancount",
   "displayName": "Beancount",
   "description": "VSCode extension for Beancount",
-  "version": "0.6.0",
+  "version": "0.8.0",
   "publisher": "Lencerf",
   "engines": {
     "vscode": "^1.46.0"
@@ -60,6 +60,11 @@
           "type": "string",
           "default": "python3",
           "description": "Specify the path of Python if beancount is not installed in the main Python installation."
+        },
+        "beancount.fixedCJKWidth": {
+          "type": "boolean",
+          "default": false,
+          "description": "Set to true to treat CJK aka East Asian characters as two letters width on alignment."
         },
         "beancount.inputMethods": {
           "type": "array",

@@ -33,6 +33,7 @@ window as the main file.
 * `beancount.runFavaOnActivate`: If it is set to `true`, [fava](https://github.com/beancount/fava) will run once this extension is activated.
 * `beancount.favaPath`: Specify the path of Fava if Fava is not installed in the main Python installation.
 * `beancount.python3Path`: Specify the path of Python if beancount is not installed in the main Python installation.
+* `beancount.fixedCJKWidth`: Set to true to treat CJK aka East Asian characters as two letters width on alignment.
 * `beancount.inputMethods`: List the input methods for auto-completion of payees and narrations with CJK characters. Currently only `pinyin` is supported. [See details](https://github.com/Lencerf/vscode-beancount/blob/master/InputMethods.md).
 
 ## Recommended practices
@@ -69,16 +70,14 @@ see GitHub [issue page](https://github.com/Lencerf/vscode-beancount/issues)
 
 ## Release Notes
 
+### 0.8.0
+* Support alias `~` for home directory on `python3Path` config [@whusnoopy](https://github.com/Lencerf/vscode-beancount/pull/59).
+* Support windows % variables paths [@huruka](https://github.com/huruka/vscode-beancount/commit/f66ae343f744cf539e3e964d4c01691b5ff23859).
+
+### 0.7.0
+* Change `assets-class` to `asset-class` in snippets [@chylli-binary](https://github.com/Lencerf/vscode-beancount/pull/54).
+* Treat CJK aka East Asian characters as two letters width [@yukixz](https://github.com/Lencerf/vscode-beancount/pull/55).
+
 ### 0.6.0
 * Add/remove diagnostic information when standalone files are opened/closed
 * Let formatter ignore non-beancount files
-
-### 0.5.7
-* fix npm audit warnings by bumping packages
-* (@isometimescode) Add outline for ;#region statements, related to (https://github.com/Lencerf/vscode-beancount/issues/25)
-
-### 0.5.6
-* fix [#40](https://github.com/Lencerf/vscode-beancount/issues/40)
-
-### 0.5.5
-* fix [#38](https://github.com/Lencerf/vscode-beancount/issues/38): account autocompletion fails due to commodity price error
